@@ -111,24 +111,24 @@ function getUserSelection(UserInput) {
   function whoWon(userSelection,computerSelection) {
     if (userSelection === computerSelection) {
       console.log('Game was tied');
-    } else if (userSelection === 'rock') {
-      if (computerSelection === 'paper') {
+    } else if (userSelection === 'rock' &&
+      computerSelection === 'paper') {
       console.log('Computer won');
-      } else {
+    } else if (userSelection === 'paper' && computerSelection === 'rock') {
       console.log('You won');
-      }
-    } else if (userSelection === 'paper'){
-      if (computerSelection === 'scissors') {
+    
+    } else if (userSelection === 'paper' &&
+      computerSelection === 'scissors') {
       console.log('Computer won');
-      }else {
+    } else if (userSelection === 'scissors' && computerSelection === 'paper') { 
       console.log('You won');
-      }
-    } else if (userSelection === 'scissors') {
-      if (computerSelection === 'rock') {
+    
+    } else if (userSelection === 'scissors' &&
+      computerSelection === 'rock') {
       console.log('Computer won');
-      } else {
+    } else if (userSelection === 'rock' && computerSelection === 'scissors') {
       console.log('You won');
-      }
+    }
   };
 
   function playGame() {
