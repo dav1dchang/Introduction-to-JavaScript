@@ -30,7 +30,7 @@ console.log(x);
 
 //Task d: Write a function to multiply a*b 
 
-const multiply = function(a,b){
+function multiply(a,b){
     console.log(a * b);
    } 
    multiply(5,9)
@@ -64,36 +64,25 @@ function HumanAge(age){
 
 // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
   
-function weight(dogweight){
-    var feed = x*dogweight;
-    let x =
-    if (age>=1 && dogweight<=5){
-    let x = .05
+function hungryDog(weight, age){
+    if(age>=1 && weight<=5){
+      console.log(weight*.05)
+    }else if(age>=1 && weight>=6 && weight<=10){
+      console.log(weight*.04)
+    }else if(age>=1 && weight>=11 && weight<=15){
+      console.log(weight*.03)
+    }else if(age>=1 && weight>15){
+      console.log(weight*.02)
+    }else if(age>=1/6 && age<=1/3){
+      console.log(weight*.10)
+    }else if(age>1/3 && age<=7/12){
+      console.log(weight*.05)
+    }else if(age>7/12 && age<1){
+      console.log(weight*.04)
     }
-    else if (age>=1 && 6<=dogweight<=10){
-    let x = .04
-    }
-    else if (age>=1 && 11<=dogweight<=15){
-    let x = .03
-    }
-    else if (age>=1 && dogweight>15){
-    let x = .02
-    }
-    else if (0.166<=age<0.333){
-    let x = .10
-    }
-    else if (0.333<=age<0.583){
-    let x = .05
-    }
-    else if (0.583<=age<1){
-    let x = .04
-    }
-  console.log(feed);
-  console.log()
-  }
-    
-  age(1);
-  weight(15);
+  }//function
+  
+  hungryDog(15, 1);
 
 /************************************************************** Task 4 **************************************************************/
 // Rock, Paper, Sissors
@@ -105,58 +94,50 @@ function weight(dogweight){
 const getUserSelection = userInput =>{
     userInput = userInput.toLowerCase();
     if (userInput === 'rock' || userInput==='paper' || userInput ==='scissors') {
-      return userInput;
+      console.log(userInput);
     } else {
       console.log('not a valid selection');
     }
   };
   
-  function getComputerSelection() {
-    switch(Math.floor(Math.random()*3)) {
-      case 0:
-        return 'rock';
-        break;
-      case 1:
-        return 'scissors';
-        break;
-      case 2:
-        return 'paper';
-        break;
-        };
-  }
+    var computerSelection = Math.floor(Math.random() * 2); 
+    if (computerSelection == 0 {
+        computerSelection = "rock";
+    } else if(computerSelection == 1) {
+        computerChoice = "paper";
+    } else {
+        computerChoice = "scissors";
+    }
   
-  function determineWinner(userSelection,computerSelection) {
+  function whoWon(userSelection,computerSelection) {
     if (userSelection === computerSelection) {
-      return 'It\'s a tie!';
+      console.log('Game was tied');
     } else if (userSelection === 'rock') {
       if (computerSelection === 'paper') {
-        return 'Computer wins!';
+      console.log('Computer won');
       } else {
-        return 'You win!';
+      console.log('You won');
       }
     } else if (userSelection === 'paper'){
       if (computerSelection === 'scissors') {
-        return 'Computer wins!';
+      console.log('Computer won');
       }else {
-        return 'You win!';
+      console.log('You won');
       }
     } else if (userSelection === 'scissors') {
       if (computerSelection === 'rock') {
-        return 'Computer wins!';
+      console.log('Computer won');
       } else {
-        return 'You win!';
+      console.log('You won');
       }
-    } else if (userSelection === 'bomb') {
-      return 'You win!';
-    }
   };
-  
+
   function playGame() {
     var userSelection = getUserSelection('scissors');
     var computerSelection = getComputerSelection()
-    console.log(`you threw ${userSelection}`);
-    console.log(`computer threw ${computerSelection}`);
-    console.log(determineWinner(userSelection,computerSelection));
+    console.log(`you chose ${userSelection}`);
+    console.log(`computer chose ${computerSelection}`);
+    console.log(whoWon(userSelection,computerSelection));
   };  
   
 
@@ -185,9 +166,26 @@ function getFeet(feet){
 // 99 bottles of soda on the wall
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
-  
 
 
+function annoyingSong(i) {  
+    var bottles;
+    var sodasRemaining;
+    for (i; i >= 1; i--) {
+      if (i == 1) {
+        bottles = "bottle";
+        sodasRemaining = "No bottles of soda on the wall!";
+      } else {
+        bottles = "bottles";
+        sodasRemaining = i - 1 + " bottles of soda on the wall!";
+      } console.log(i+ " " + bottles + " of soda on the wall,");
+      console.log(i+ " " + bottles + " of soda,");
+      console.log("Take one down, pass it around,");
+      console.log(sodasRemaining);
+      } 
+      
+  }//function
+  console.log(annoyingSong(99));
 
 
 /************************************************************** Task 7 **************************************************************/
@@ -199,20 +197,22 @@ function getFeet(feet){
 //60s should be D 
 //and anything below 60 should be F
   
-function grades(){
-    if(grades <=== 59){
-        return ("F");
-    }else if(grades === 60 || grades <=== 69){
-        return ("D");
-    }else if(grades === 70 || grades <=== 79){
-        return ("C");
-    }else if(grades === 80 || grades <=== 89){
-        return ("B");
-    }else({
-        return ("A");
+var grade = Math.floor(Math.random() * 101);
+    if(grade<=59){
+        console.log("F");
+    }else if(grade<=69){
+        console.log("D");
+    }else if(grade<=79){
+        console.log("C");
+    }else if(grade<=89){
+        console.log("B");
+    }else {
+        console.log("A");
     }
 
-grades(59);
+console.log(grade)
+
+
 
 /************************************************************** Stretch **************************************************************/
 //Create a function that counts the number of vowels within a string. It should handle both capitalized and uncapitalized vowels.
