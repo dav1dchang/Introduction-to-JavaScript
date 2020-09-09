@@ -7,7 +7,7 @@ if(votingAge >= 18){
     console.log(true);}
     else {
     console.log(false);}
-    }
+    
     
 //Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
 
@@ -91,19 +91,18 @@ function hungryDog(weight, age){
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
 
-const getUserSelection = userInput =>{
-    userInput = userInput.toLowerCase();
+function getUserSelection(UserInput) {
     if (userInput === 'rock' || userInput==='paper' || userInput ==='scissors') {
       console.log(userInput);
     } else {
       console.log('not a valid selection');
     }
-  };
+    };
   
     var computerSelection = Math.floor(Math.random() * 2); 
-    if (computerSelection == 0 {
+    if (computerSelection == 0){
         computerSelection = "rock";
-    } else if(computerSelection == 1) {
+    } else if(computerSelection == 1){
         computerChoice = "paper";
     } else {
         computerChoice = "scissors";
@@ -198,6 +197,7 @@ function annoyingSong(i) {
 //and anything below 60 should be F
   
 var grade = Math.floor(Math.random() * 101);
+console.log(grade);
     if(grade<=59){
         console.log("F");
     }else if(grade<=69){
@@ -209,8 +209,6 @@ var grade = Math.floor(Math.random() * 101);
     }else {
         console.log("A");
     }
-
-console.log(grade)
 
 
 
