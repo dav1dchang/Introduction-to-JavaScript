@@ -91,7 +91,7 @@ function hungryDog(weight, age){
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
 
-function getUserSelection(UserInput) {
+function getUserSelection(userInput) {
     if (userInput === 'rock' || userInput==='paper' || userInput ==='scissors') {
       console.log(userInput);
     } else {
@@ -99,13 +99,13 @@ function getUserSelection(UserInput) {
     }
     };
   
-    var computerSelection = Math.floor(Math.random() * 2); 
+    var computerSelection = Math.floor(Math.random() * 3); 
     if (computerSelection == 0){
         computerSelection = "rock";
     } else if(computerSelection == 1){
-        computerChoice = "paper";
+        computerSelection = "paper";
     } else {
-        computerChoice = "scissors";
+        computerSelection = "scissors";
     }
   
   function whoWon(userSelection,computerSelection) {
@@ -138,7 +138,8 @@ function getUserSelection(UserInput) {
     console.log(`computer chose ${computerSelection}`);
     console.log(whoWon(userSelection,computerSelection));
   };  
-  
+
+ playGame('scissors');
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
