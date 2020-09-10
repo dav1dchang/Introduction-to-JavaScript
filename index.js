@@ -91,14 +91,16 @@ function hungryDog(weight, age){
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
 
+//verifying the user is selecting one of the three valid selections
 function getUserSelection(userInput) {
     if (userInput === 'rock' || userInput==='paper' || userInput ==='scissors') {
-      console.log(userInput);
+      return(userInput);
     } else {
-      console.log('not a valid selection');
+      return('not a valid selection');
     }
     };
-  
+
+ //randomizing computer's selection
     var computerSelection = Math.floor(Math.random() * 3); 
     if (computerSelection == 0){
         computerSelection = "rock";
@@ -108,38 +110,33 @@ function getUserSelection(userInput) {
         computerSelection = "scissors";
     }
   
+  //determining who won
   function whoWon(userSelection,computerSelection) {
     if (userSelection === computerSelection) {
-      console.log('Game was tied');
+      return('Game was tied');
     } else if (userSelection === 'rock' &&
       computerSelection === 'paper') {
-      console.log('Computer won');
+      return('Computer won');
     } else if (userSelection === 'paper' && computerSelection === 'rock') {
-      console.log('You won');
+      return('You won');
     
     } else if (userSelection === 'paper' &&
       computerSelection === 'scissors') {
-      console.log('Computer won');
+      return('Computer won');
     } else if (userSelection === 'scissors' && computerSelection === 'paper') { 
-      console.log('You won');
+      return('You won');
     
     } else if (userSelection === 'scissors' &&
       computerSelection === 'rock') {
-      console.log('Computer won');
+      return('Computer won');
     } else if (userSelection === 'rock' && computerSelection === 'scissors') {
-      console.log('You won');
+      return('You won');
     }
   };
 
-  function playGame() {
-    var userSelection = getUserSelection('scissors');
-    var computerSelection = getComputerSelection()
-    console.log(`you chose ${userSelection}`);
-    console.log(`computer chose ${computerSelection}`);
-    console.log(whoWon(userSelection,computerSelection));
-  };  
-
- playGame('scissors');
+  console.log('User selected: scissors');//displaying the user's selection
+  console.log('Computer selected: ' + computerSelection);//displaying the computer's selection
+  console.log(whoWon('scissors', computerSelection));//invoking function and determining winner
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
